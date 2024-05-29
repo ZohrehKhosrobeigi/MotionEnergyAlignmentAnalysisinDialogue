@@ -1,0 +1,1264 @@
+
+ bigram per session
+This is input data
+           Resource
+ngrams       D1  D2
+  Neg Neg     9   0
+  Neg Open   23  18
+  Neg Pos    14   0
+  Open Neg   27  16
+  Open Open 315 551
+  Open Pos   93  18
+  Pos Neg    11   2
+  Pos Open   96  16
+  Pos Pos    33   0
+
+This is rho
+X-squared 
+    237.8 
+
+This is pvalue
+[1] 6.661e-47
+
+This is standard residual
+           Resource
+ngrams            D1       D2
+  Neg Neg     3.0110  -3.0110
+  Neg Open    0.7941  -0.7941
+  Neg Pos     3.7630  -3.7630
+  Open Neg    1.7070  -1.7070
+  Open Open -14.5800  14.5800
+  Open Pos    7.4600  -7.4600
+  Pos Neg     2.5090  -2.5090
+  Pos Open    7.9250  -7.9250
+  Pos Pos     5.8220  -5.8220
+
+This is observation
+           Resource
+ngrams       D1  D2
+  Neg Neg     9   0
+  Neg Open   23  18
+  Neg Pos    14   0
+  Open Neg   27  16
+  Open Open 315 551
+  Open Pos   93  18
+  Pos Neg    11   2
+  Pos Open   96  16
+  Pos Pos    33   0
+
+This is expected
+           Resource
+ngrams         D1    D2
+  Neg Neg     4.5   4.5
+  Neg Open   20.5  20.5
+  Neg Pos     7.0   7.0
+  Open Neg   21.5  21.5
+  Open Open 433.0 433.0
+  Open Pos   55.5  55.5
+  Pos Neg     6.5   6.5
+  Pos Open   56.0  56.0
+  Pos Pos    16.5  16.5
+
+Dimensions (9x2): 18
+Bonferroni adjustment to alpha: 0.00277777777777778
+Two-tailed critical value: 2.99131611518378
+
+This is the test result:
+
+	Pearson's Chi-squared test
+
+data:  x
+X-squared = 237.79, df = 8, p-value < 2.2e-16
+
+This is input data
+           Resource
+ngrams       D1  D2
+  Neg Neg    10   0
+  Neg Open   28  12
+  Neg Pos     7   0
+  Open Neg   28  12
+  Open Open 201 337
+  Open Pos   41   6
+  Pos Neg     7   0
+  Pos Open   42   6
+  Pos Pos     9   0
+
+This is rho
+X-squared 
+    133.2 
+
+This is pvalue
+[1] 6.012e-25
+
+This is standard residual
+           Resource
+ngrams           D1      D2
+  Neg Neg     3.184  -3.184
+  Neg Open    2.601  -2.601
+  Neg Pos     2.658  -2.658
+  Open Neg    2.601  -2.601
+  Open Open -11.100  11.100
+  Open Pos    5.274  -5.274
+  Pos Neg     2.658  -2.658
+  Pos Open    5.372  -5.372
+  Pos Pos     3.018  -3.018
+
+This is observation
+           Resource
+ngrams       D1  D2
+  Neg Neg    10   0
+  Neg Open   28  12
+  Neg Pos     7   0
+  Open Neg   28  12
+  Open Open 201 337
+  Open Pos   41   6
+  Pos Neg     7   0
+  Pos Open   42   6
+  Pos Pos     9   0
+
+This is expected
+           Resource
+ngrams         D1    D2
+  Neg Neg     5.0   5.0
+  Neg Open   20.0  20.0
+  Neg Pos     3.5   3.5
+  Open Neg   20.0  20.0
+  Open Open 269.0 269.0
+  Open Pos   23.5  23.5
+  Pos Neg     3.5   3.5
+  Pos Open   24.0  24.0
+  Pos Pos     4.5   4.5
+
+Dimensions (9x2): 18
+Bonferroni adjustment to alpha: 0.00277777777777778
+Two-tailed critical value: 2.99131611518378
+
+This is the test result:
+
+	Pearson's Chi-squared test
+
+data:  x
+X-squared = 133.24, df = 8, p-value < 2.2e-16
+
+This is input data
+           Resource
+ngrams       D1  D2
+  Neg Neg     9   1
+  Neg Open   49  20
+  Neg Pos    12   0
+  Open Neg   44  19
+  Open Open 562 799
+  Open Pos   83  17
+  Pos Neg    17   1
+  Pos Open   78  16
+  Pos Pos    19   0
+
+This is rho
+X-squared 
+    199.5 
+
+This is pvalue
+[1] 8.323e-39
+
+This is standard residual
+           Resource
+ngrams           D1      D2
+  Neg Neg     2.537  -2.537
+  Neg Open    3.562  -3.562
+  Neg Pos     3.476  -3.476
+  Open Neg    3.208  -3.208
+  Open Open -13.680  13.680
+  Open Pos    6.798  -6.798
+  Pos Neg     3.791  -3.791
+  Pos Open    6.574  -6.574
+  Pos Pos     4.383  -4.383
+
+This is observation
+           Resource
+ngrams       D1  D2
+  Neg Neg     9   1
+  Neg Open   49  20
+  Neg Pos    12   0
+  Open Neg   44  19
+  Open Open 562 799
+  Open Pos   83  17
+  Pos Neg    17   1
+  Pos Open   78  16
+  Pos Pos    19   0
+
+This is expected
+           Resource
+ngrams         D1    D2
+  Neg Neg     5.0   5.0
+  Neg Open   34.5  34.5
+  Neg Pos     6.0   6.0
+  Open Neg   31.5  31.5
+  Open Open 680.5 680.5
+  Open Pos   50.0  50.0
+  Pos Neg     9.0   9.0
+  Pos Open   47.0  47.0
+  Pos Pos     9.5   9.5
+
+Dimensions (9x2): 18
+Bonferroni adjustment to alpha: 0.00277777777777778
+Two-tailed critical value: 2.99131611518378
+
+This is the test result:
+
+	Pearson's Chi-squared test
+
+data:  x
+X-squared = 199.46, df = 8, p-value < 2.2e-16
+
+This is input data
+           Resource
+ngrams       D1  D2
+  Neg Neg     4   0
+  Neg Open   35  11
+  Neg Pos     6   0
+  Open Neg   34  11
+  Open Open 504 689
+  Open Pos   66  12
+  Pos Neg     8   0
+  Pos Open   64  12
+  Pos Pos    14   0
+
+This is rho
+X-squared 
+    157.9 
+
+This is pvalue
+[1] 4.334e-30
+
+This is standard residual
+           Resource
+ngrams           D1      D2
+  Neg Neg     2.003  -2.003
+  Neg Open    3.595  -3.595
+  Neg Pos     2.455  -2.455
+  Open Neg    3.482  -3.482
+  Open Open -12.340  12.340
+  Open Pos    6.283  -6.283
+  Pos Neg     2.836  -2.836
+  Pos Open    6.125  -6.125
+  Pos Pos     3.760  -3.760
+
+This is observation
+           Resource
+ngrams       D1  D2
+  Neg Neg     4   0
+  Neg Open   35  11
+  Neg Pos     6   0
+  Open Neg   34  11
+  Open Open 504 689
+  Open Pos   66  12
+  Pos Neg     8   0
+  Pos Open   64  12
+  Pos Pos    14   0
+
+This is expected
+           Resource
+ngrams         D1    D2
+  Neg Neg     2.0   2.0
+  Neg Open   23.0  23.0
+  Neg Pos     3.0   3.0
+  Open Neg   22.5  22.5
+  Open Open 596.5 596.5
+  Open Pos   39.0  39.0
+  Pos Neg     4.0   4.0
+  Pos Open   38.0  38.0
+  Pos Pos     7.0   7.0
+
+Dimensions (9x2): 18
+Bonferroni adjustment to alpha: 0.00277777777777778
+Two-tailed critical value: 2.99131611518378
+
+This is the test result:
+
+	Pearson's Chi-squared test
+
+data:  x
+X-squared = 157.93, df = 8, p-value < 2.2e-16
+
+This is input data
+           Resource
+ngrams       D1  D2
+  Neg Neg    10   1
+  Neg Open   52  13
+  Neg Pos    12   0
+  Open Neg   51  11
+  Open Open 412 608
+  Open Pos   55  19
+  Pos Neg    13   2
+  Pos Open   53  17
+  Pos Pos    13   0
+
+This is rho
+X-squared 
+    163.3 
+
+This is pvalue
+[1] 3.22e-31
+
+This is standard residual
+           Resource
+ngrams           D1      D2
+  Neg Neg     2.725  -2.725
+  Neg Open    4.959  -4.959
+  Neg Pos     3.480  -3.480
+  Open Neg    5.202  -5.202
+  Open Open -12.530  12.530
+  Open Pos    4.305  -4.305
+  Pos Neg     2.856  -2.856
+  Pos Open    4.420  -4.420
+  Pos Pos     3.623  -3.623
+
+This is observation
+           Resource
+ngrams       D1  D2
+  Neg Neg    10   1
+  Neg Open   52  13
+  Neg Pos    12   0
+  Open Neg   51  11
+  Open Open 412 608
+  Open Pos   55  19
+  Pos Neg    13   2
+  Pos Open   53  17
+  Pos Pos    13   0
+
+This is expected
+           Resource
+ngrams         D1    D2
+  Neg Neg     5.5   5.5
+  Neg Open   32.5  32.5
+  Neg Pos     6.0   6.0
+  Open Neg   31.0  31.0
+  Open Open 510.0 510.0
+  Open Pos   37.0  37.0
+  Pos Neg     7.5   7.5
+  Pos Open   35.0  35.0
+  Pos Pos     6.5   6.5
+
+Dimensions (9x2): 18
+Bonferroni adjustment to alpha: 0.00277777777777778
+Two-tailed critical value: 2.99131611518378
+
+This is the test result:
+
+	Pearson's Chi-squared test
+
+data:  x
+X-squared = 163.33, df = 8, p-value < 2.2e-16
+
+This is input data
+           Resource
+ngrams       D1  D2
+  Neg Neg     8   0
+  Neg Open   34  14
+  Neg Pos     9   0
+  Open Neg   34  13
+  Open Open 307 489
+  Open Pos   66  15
+  Pos Neg     9   1
+  Pos Open   66  14
+  Pos Pos    13   0
+
+This is rho
+X-squared 
+    161.6 
+
+This is pvalue
+[1] 7.258e-31
+
+This is standard residual
+           Resource
+ngrams           D1      D2
+  Neg Neg     2.839  -2.839
+  Neg Open    2.952  -2.952
+  Neg Pos     3.012  -3.012
+  Open Neg    3.131  -3.131
+  Open Open -12.390  12.390
+  Open Pos    5.889  -5.889
+  Pos Neg     2.541  -2.541
+  Pos Open    6.039  -6.039
+  Pos Pos     3.627  -3.627
+
+This is observation
+           Resource
+ngrams       D1  D2
+  Neg Neg     8   0
+  Neg Open   34  14
+  Neg Pos     9   0
+  Open Neg   34  13
+  Open Open 307 489
+  Open Pos   66  15
+  Pos Neg     9   1
+  Pos Open   66  14
+  Pos Pos    13   0
+
+This is expected
+           Resource
+ngrams         D1    D2
+  Neg Neg     4.0   4.0
+  Neg Open   24.0  24.0
+  Neg Pos     4.5   4.5
+  Open Neg   23.5  23.5
+  Open Open 398.0 398.0
+  Open Pos   40.5  40.5
+  Pos Neg     5.0   5.0
+  Pos Open   40.0  40.0
+  Pos Pos     6.5   6.5
+
+Dimensions (9x2): 18
+Bonferroni adjustment to alpha: 0.00277777777777778
+Two-tailed critical value: 2.99131611518378
+
+This is the test result:
+
+	Pearson's Chi-squared test
+
+data:  x
+X-squared = 161.64, df = 8, p-value < 2.2e-16
+
+This is input data
+           Resource
+ngrams       D1  D2
+  Neg Neg     2   0
+  Neg Open   13   9
+  Neg Pos     2   0
+  Open Neg   14   9
+  Open Open 124 246
+  Open Pos   50   7
+  Pos Neg     2   0
+  Pos Open   50   7
+  Pos Pos    21   0
+
+This is rho
+X-squared 
+    133.9 
+
+This is pvalue
+[1] 4.354e-25
+
+This is standard residual
+           Resource
+ngrams            D1       D2
+  Neg Neg     1.4170  -1.4170
+  Neg Open    0.8702  -0.8702
+  Neg Pos     1.4170  -1.4170
+  Open Neg    1.0650  -1.0650
+  Open Open -10.9700  10.9700
+  Open Pos    6.0120  -6.0120
+  Pos Neg     1.4170  -1.4170
+  Pos Open    6.0120  -6.0120
+  Pos Pos     4.6720  -4.6720
+
+This is observation
+           Resource
+ngrams       D1  D2
+  Neg Neg     2   0
+  Neg Open   13   9
+  Neg Pos     2   0
+  Open Neg   14   9
+  Open Open 124 246
+  Open Pos   50   7
+  Pos Neg     2   0
+  Pos Open   50   7
+  Pos Pos    21   0
+
+This is expected
+           Resource
+ngrams         D1    D2
+  Neg Neg     1.0   1.0
+  Neg Open   11.0  11.0
+  Neg Pos     1.0   1.0
+  Open Neg   11.5  11.5
+  Open Open 185.0 185.0
+  Open Pos   28.5  28.5
+  Pos Neg     1.0   1.0
+  Pos Open   28.5  28.5
+  Pos Pos    10.5  10.5
+
+Dimensions (9x2): 18
+Bonferroni adjustment to alpha: 0.00277777777777778
+Two-tailed critical value: 2.99131611518378
+
+This is the test result:
+
+	Pearson's Chi-squared test
+
+data:  x
+X-squared = 133.92, df = 8, p-value < 2.2e-16
+
+This is input data
+           Resource
+ngrams       D1  D2
+  Neg Neg     1   0
+  Neg Open   39  12
+  Neg Pos     6   0
+  Open Neg   38  12
+  Open Open 265 449
+  Open Pos   53   5
+  Pos Neg     7   0
+  Pos Open   52   5
+  Pos Pos    22   0
+
+This is rho
+X-squared 
+    189.7 
+
+This is pvalue
+[1] 9.372e-37
+
+This is standard residual
+           Resource
+ngrams           D1      D2
+  Neg Neg     1.001  -1.001
+  Neg Open    3.885  -3.885
+  Neg Pos     2.457  -2.457
+  Open Neg    3.776  -3.776
+  Open Open -13.480  13.480
+  Open Pos    6.501  -6.501
+  Pos Neg     2.655  -2.655
+  Pos Open    6.418  -6.418
+  Pos Pos     4.745  -4.745
+
+This is observation
+           Resource
+ngrams       D1  D2
+  Neg Neg     1   0
+  Neg Open   39  12
+  Neg Pos     6   0
+  Open Neg   38  12
+  Open Open 265 449
+  Open Pos   53   5
+  Pos Neg     7   0
+  Pos Open   52   5
+  Pos Pos    22   0
+
+This is expected
+           Resource
+ngrams         D1    D2
+  Neg Neg     0.5   0.5
+  Neg Open   25.5  25.5
+  Neg Pos     3.0   3.0
+  Open Neg   25.0  25.0
+  Open Open 357.0 357.0
+  Open Pos   29.0  29.0
+  Pos Neg     3.5   3.5
+  Pos Open   28.5  28.5
+  Pos Pos    11.0  11.0
+
+Dimensions (9x2): 18
+Bonferroni adjustment to alpha: 0.00277777777777778
+Two-tailed critical value: 2.99131611518378
+
+This is the test result:
+
+	Pearson's Chi-squared test
+
+data:  x
+X-squared = 189.71, df = 8, p-value < 2.2e-16
+
+This is input data
+           Resource
+ngrams       D1  D2
+  Neg Neg     1   0
+  Neg Open   15   9
+  Neg Pos     5   0
+  Open Neg   18   9
+  Open Open 241 368
+  Open Pos   52   7
+  Pos Neg     2   0
+  Pos Open   55   7
+  Pos Pos    11   0
+
+This is rho
+X-squared 
+    121.5 
+
+This is pvalue
+[1] 1.65e-22
+
+This is standard residual
+           Resource
+ngrams           D1      D2
+  Neg Neg     1.001  -1.001
+  Neg Open    1.244  -1.244
+  Neg Pos     2.243  -2.243
+  Open Neg    1.762  -1.762
+  Open Open -10.530  10.530
+  Open Pos    6.087  -6.087
+  Pos Neg     1.416  -1.416
+  Pos Open    6.347  -6.347
+  Pos Pos     3.340  -3.340
+
+This is observation
+           Resource
+ngrams       D1  D2
+  Neg Neg     1   0
+  Neg Open   15   9
+  Neg Pos     5   0
+  Open Neg   18   9
+  Open Open 241 368
+  Open Pos   52   7
+  Pos Neg     2   0
+  Pos Open   55   7
+  Pos Pos    11   0
+
+This is expected
+           Resource
+ngrams         D1    D2
+  Neg Neg     0.5   0.5
+  Neg Open   12.0  12.0
+  Neg Pos     2.5   2.5
+  Open Neg   13.5  13.5
+  Open Open 304.5 304.5
+  Open Pos   29.5  29.5
+  Pos Neg     1.0   1.0
+  Pos Open   31.0  31.0
+  Pos Pos     5.5   5.5
+
+Dimensions (9x2): 18
+Bonferroni adjustment to alpha: 0.00277777777777778
+Two-tailed critical value: 2.99131611518378
+
+This is the test result:
+
+	Pearson's Chi-squared test
+
+data:  x
+X-squared = 121.47, df = 8, p-value < 2.2e-16
+
+This is input data
+           Resource
+ngrams       D1  D2
+  Neg Neg    12   1
+  Neg Open   38  15
+  Neg Pos    18   0
+  Open Neg   40  15
+  Open Open 337 586
+  Open Pos   67   9
+  Pos Neg    16   0
+  Pos Open   69   9
+  Pos Pos    38   0
+
+This is rho
+X-squared 
+    260.2 
+
+This is pvalue
+[1] 1.159e-51
+
+This is standard residual
+           Resource
+ngrams           D1      D2
+  Neg Neg     3.067  -3.067
+  Neg Open    3.227  -3.227
+  Neg Pos     4.273  -4.273
+  Open Neg    3.446  -3.446
+  Open Open -15.680  15.680
+  Open Pos    6.862  -6.862
+  Pos Neg     4.025  -4.025
+  Pos Open    7.012  -7.012
+  Pos Pos     6.259  -6.259
+
+This is observation
+           Resource
+ngrams       D1  D2
+  Neg Neg    12   1
+  Neg Open   38  15
+  Neg Pos    18   0
+  Open Neg   40  15
+  Open Open 337 586
+  Open Pos   67   9
+  Pos Neg    16   0
+  Pos Open   69   9
+  Pos Pos    38   0
+
+This is expected
+           Resource
+ngrams         D1    D2
+  Neg Neg     6.5   6.5
+  Neg Open   26.5  26.5
+  Neg Pos     9.0   9.0
+  Open Neg   27.5  27.5
+  Open Open 461.5 461.5
+  Open Pos   38.0  38.0
+  Pos Neg     8.0   8.0
+  Pos Open   39.0  39.0
+  Pos Pos    19.0  19.0
+
+Dimensions (9x2): 18
+Bonferroni adjustment to alpha: 0.00277777777777778
+Two-tailed critical value: 2.99131611518378
+
+This is the test result:
+
+	Pearson's Chi-squared test
+
+data:  x
+X-squared = 260.24, df = 8, p-value < 2.2e-16
+
+This is input data
+           Resource
+ngrams       D1  D2
+  Neg Neg     6   1
+  Neg Open   39  11
+  Neg Pos    11   0
+  Open Neg   33  11
+  Open Open 225 537
+  Open Pos   93  22
+  Pos Neg    17   0
+  Pos Open   88  22
+  Pos Pos    92   0
+
+This is rho
+X-squared 
+    361.4 
+
+This is pvalue
+[1] 3.278e-73
+
+This is standard residual
+           Resource
+ngrams           D1      D2
+  Neg Neg     1.895  -1.895
+  Neg Open    4.044  -4.044
+  Neg Pos     3.332  -3.332
+  Open Neg    3.379  -3.379
+  Open Open -18.600  18.600
+  Open Pos    6.960  -6.960
+  Pos Neg     4.152  -4.152
+  Pos Open    6.601  -6.601
+  Pos Pos     9.979  -9.979
+
+This is observation
+           Resource
+ngrams       D1  D2
+  Neg Neg     6   1
+  Neg Open   39  11
+  Neg Pos    11   0
+  Open Neg   33  11
+  Open Open 225 537
+  Open Pos   93  22
+  Pos Neg    17   0
+  Pos Open   88  22
+  Pos Pos    92   0
+
+This is expected
+           Resource
+ngrams         D1    D2
+  Neg Neg     3.5   3.5
+  Neg Open   25.0  25.0
+  Neg Pos     5.5   5.5
+  Open Neg   22.0  22.0
+  Open Open 381.0 381.0
+  Open Pos   57.5  57.5
+  Pos Neg     8.5   8.5
+  Pos Open   55.0  55.0
+  Pos Pos    46.0  46.0
+
+Dimensions (9x2): 18
+Bonferroni adjustment to alpha: 0.00277777777777778
+Two-tailed critical value: 2.99131611518378
+
+This is the test result:
+
+	Pearson's Chi-squared test
+
+data:  x
+X-squared = 361.43, df = 8, p-value < 2.2e-16
+
+This is input data
+           Resource
+ngrams       D1  D2
+  Neg Neg    16   0
+  Neg Open   55   7
+  Neg Pos    19   0
+  Open Neg   55   5
+  Open Open 311 602
+  Open Pos   66  13
+  Pos Neg    19   2
+  Pos Open   67  11
+  Pos Pos    34   2
+
+This is rho
+X-squared 
+    324.5 
+
+This is pvalue
+[1] 2.433e-65
+
+This is standard residual
+           Resource
+ngrams           D1      D2
+  Neg Neg     4.025  -4.025
+  Neg Open    6.249  -6.249
+  Neg Pos     4.392  -4.392
+  Open Neg    6.611  -6.611
+  Open Open -17.920  17.920
+  Open Pos    6.155  -6.155
+  Pos Neg     3.740  -3.740
+  Pos Open    6.543  -6.543
+  Pos Pos     5.410  -5.410
+
+This is observation
+           Resource
+ngrams       D1  D2
+  Neg Neg    16   0
+  Neg Open   55   7
+  Neg Pos    19   0
+  Open Neg   55   5
+  Open Open 311 602
+  Open Pos   66  13
+  Pos Neg    19   2
+  Pos Open   67  11
+  Pos Pos    34   2
+
+This is expected
+           Resource
+ngrams         D1    D2
+  Neg Neg     8.0   8.0
+  Neg Open   31.0  31.0
+  Neg Pos     9.5   9.5
+  Open Neg   30.0  30.0
+  Open Open 456.5 456.5
+  Open Pos   39.5  39.5
+  Pos Neg    10.5  10.5
+  Pos Open   39.0  39.0
+  Pos Pos    18.0  18.0
+
+Dimensions (9x2): 18
+Bonferroni adjustment to alpha: 0.00277777777777778
+Two-tailed critical value: 2.99131611518378
+
+This is the test result:
+
+	Pearson's Chi-squared test
+
+data:  x
+X-squared = 324.55, df = 8, p-value < 2.2e-16
+
+This is input data
+           Resource
+ngrams       D1  D2
+  Neg Neg     9   0
+  Neg Open   45  10
+  Neg Pos    10   1
+  Open Neg   54  11
+  Open Open 344 520
+  Open Pos   41  12
+  Pos Neg     2   0
+  Pos Open   49  13
+  Pos Pos    14   1
+
+This is rho
+X-squared 
+      153 
+
+This is pvalue
+[1] 4.702e-29
+
+This is standard residual
+           Resource
+ngrams           D1      D2
+  Neg Neg     3.012  -3.012
+  Neg Open    4.838  -4.838
+  Neg Pos     2.727  -2.727
+  Open Neg    5.493  -5.493
+  Open Open -12.240  12.240
+  Open Pos    4.080  -4.080
+  Pos Neg     1.415  -1.415
+  Pos Open    4.702  -4.702
+  Pos Pos     3.379  -3.379
+
+This is observation
+           Resource
+ngrams       D1  D2
+  Neg Neg     9   0
+  Neg Open   45  10
+  Neg Pos    10   1
+  Open Neg   54  11
+  Open Open 344 520
+  Open Pos   41  12
+  Pos Neg     2   0
+  Pos Open   49  13
+  Pos Pos    14   1
+
+This is expected
+           Resource
+ngrams         D1    D2
+  Neg Neg     4.5   4.5
+  Neg Open   27.5  27.5
+  Neg Pos     5.5   5.5
+  Open Neg   32.5  32.5
+  Open Open 432.0 432.0
+  Open Pos   26.5  26.5
+  Pos Neg     1.0   1.0
+  Pos Open   31.0  31.0
+  Pos Pos     7.5   7.5
+
+Dimensions (9x2): 18
+Bonferroni adjustment to alpha: 0.00277777777777778
+Two-tailed critical value: 2.99131611518378
+
+This is the test result:
+
+	Pearson's Chi-squared test
+
+data:  x
+X-squared = 152.97, df = 8, p-value < 2.2e-16
+
+This is input data
+           Resource
+ngrams       D1  D2
+  Neg Neg     2   0
+  Neg Open   30  17
+  Neg Pos    12   0
+  Open Neg   29  17
+  Open Open 237 413
+  Open Pos   53   5
+  Pos Neg    12   0
+  Pos Open   53   5
+  Pos Pos    29   0
+
+This is rho
+X-squared 
+    188.8 
+
+This is pvalue
+[1] 1.435e-36
+
+This is standard residual
+           Resource
+ngrams           D1      D2
+  Neg Neg     1.416  -1.416
+  Neg Open    1.947  -1.947
+  Neg Pos     3.487  -3.487
+  Open Neg    1.816  -1.816
+  Open Open -12.840  12.840
+  Open Pos    6.513  -6.513
+  Pos Neg     3.487  -3.487
+  Pos Open    6.513  -6.513
+  Pos Pos     5.473  -5.473
+
+This is observation
+           Resource
+ngrams       D1  D2
+  Neg Neg     2   0
+  Neg Open   30  17
+  Neg Pos    12   0
+  Open Neg   29  17
+  Open Open 237 413
+  Open Pos   53   5
+  Pos Neg    12   0
+  Pos Open   53   5
+  Pos Pos    29   0
+
+This is expected
+           Resource
+ngrams         D1    D2
+  Neg Neg     1.0   1.0
+  Neg Open   23.5  23.5
+  Neg Pos     6.0   6.0
+  Open Neg   23.0  23.0
+  Open Open 325.0 325.0
+  Open Pos   29.0  29.0
+  Pos Neg     6.0   6.0
+  Pos Open   29.0  29.0
+  Pos Pos    14.5  14.5
+
+Dimensions (9x2): 18
+Bonferroni adjustment to alpha: 0.00277777777777778
+Two-tailed critical value: 2.99131611518378
+
+This is the test result:
+
+	Pearson's Chi-squared test
+
+data:  x
+X-squared = 188.83, df = 8, p-value < 2.2e-16
+
+This is input data
+           Resource
+ngrams       D1  D2
+  Neg Neg     7   0
+  Neg Open   35  15
+  Neg Pos     8   0
+  Open Neg   37  15
+  Open Open 163 323
+  Open Pos   45   4
+  Pos Neg     7   0
+  Pos Open   46   4
+  Pos Pos    13   0
+
+This is rho
+X-squared 
+    174.6 
+
+This is pvalue
+[1] 1.421e-33
+
+This is standard residual
+           Resource
+ngrams           D1      D2
+  Neg Neg     2.659  -2.659
+  Neg Open    2.932  -2.932
+  Neg Pos     2.844  -2.844
+  Open Neg    3.167  -3.167
+  Open Open -12.690  12.690
+  Open Pos    6.067  -6.067
+  Pos Neg     2.659  -2.659
+  Pos Open    6.157  -6.157
+  Pos Pos     3.638  -3.638
+
+This is observation
+           Resource
+ngrams       D1  D2
+  Neg Neg     7   0
+  Neg Open   35  15
+  Neg Pos     8   0
+  Open Neg   37  15
+  Open Open 163 323
+  Open Pos   45   4
+  Pos Neg     7   0
+  Pos Open   46   4
+  Pos Pos    13   0
+
+This is expected
+           Resource
+ngrams         D1    D2
+  Neg Neg     3.5   3.5
+  Neg Open   25.0  25.0
+  Neg Pos     4.0   4.0
+  Open Neg   26.0  26.0
+  Open Open 243.0 243.0
+  Open Pos   24.5  24.5
+  Pos Neg     3.5   3.5
+  Pos Open   25.0  25.0
+  Pos Pos     6.5   6.5
+
+Dimensions (9x2): 18
+Bonferroni adjustment to alpha: 0.00277777777777778
+Two-tailed critical value: 2.99131611518378
+
+This is the test result:
+
+	Pearson's Chi-squared test
+
+data:  x
+X-squared = 174.57, df = 8, p-value < 2.2e-16
+
+This is input data
+           Resource
+ngrams       D1  D2
+  Neg Neg    14   0
+  Neg Open   41  16
+  Neg Pos    19   0
+  Open Neg   44  16
+  Open Open 408 699
+  Open Pos   87  15
+  Pos Neg    16   0
+  Pos Open   89  15
+  Pos Pos    45   2
+
+This is rho
+X-squared 
+    292.3 
+
+This is pvalue
+[1] 1.752e-58
+
+This is standard residual
+           Resource
+ngrams           D1      D2
+  Neg Neg     3.759  -3.759
+  Neg Open    3.375  -3.375
+  Neg Pos     4.386  -4.386
+  Open Neg    3.688  -3.688
+  Open Open -16.690  16.690
+  Open Pos    7.380  -7.380
+  Pos Neg     4.021  -4.021
+  Pos Open    7.517  -7.517
+  Pos Pos     6.371  -6.371
+
+This is observation
+           Resource
+ngrams       D1  D2
+  Neg Neg    14   0
+  Neg Open   41  16
+  Neg Pos    19   0
+  Open Neg   44  16
+  Open Open 408 699
+  Open Pos   87  15
+  Pos Neg    16   0
+  Pos Open   89  15
+  Pos Pos    45   2
+
+This is expected
+           Resource
+ngrams         D1    D2
+  Neg Neg     7.0   7.0
+  Neg Open   28.5  28.5
+  Neg Pos     9.5   9.5
+  Open Neg   30.0  30.0
+  Open Open 553.5 553.5
+  Open Pos   51.0  51.0
+  Pos Neg     8.0   8.0
+  Pos Open   52.0  52.0
+  Pos Pos    23.5  23.5
+
+Dimensions (9x2): 18
+Bonferroni adjustment to alpha: 0.00277777777777778
+Two-tailed critical value: 2.99131611518378
+
+This is the test result:
+
+	Pearson's Chi-squared test
+
+data:  x
+X-squared = 292.35, df = 8, p-value < 2.2e-16
+
+This is input data
+           Resource
+ngrams       D1  D2
+  Neg Neg    10   0
+  Neg Open   41   4
+  Neg Pos     6   1
+  Open Neg   32   5
+  Open Open 174 333
+  Open Pos   44  12
+  Pos Neg    15   0
+  Pos Open   34  13
+  Pos Pos    12   0
+
+This is rho
+X-squared 
+    168.2 
+
+This is pvalue
+[1] 3.031e-32
+
+This is standard residual
+           Resource
+ngrams           D1      D2
+  Neg Neg     3.184  -3.184
+  Neg Open    5.692  -5.692
+  Neg Pos     1.899  -1.899
+  Open Neg    4.555  -4.555
+  Open Open -12.660  12.660
+  Open Pos    4.449  -4.449
+  Pos Neg     3.913  -3.913
+  Pos Open    3.166  -3.166
+  Pos Pos     3.493  -3.493
+
+This is observation
+           Resource
+ngrams       D1  D2
+  Neg Neg    10   0
+  Neg Open   41   4
+  Neg Pos     6   1
+  Open Neg   32   5
+  Open Open 174 333
+  Open Pos   44  12
+  Pos Neg    15   0
+  Pos Open   34  13
+  Pos Pos    12   0
+
+This is expected
+           Resource
+ngrams         D1    D2
+  Neg Neg     5.0   5.0
+  Neg Open   22.5  22.5
+  Neg Pos     3.5   3.5
+  Open Neg   18.5  18.5
+  Open Open 253.5 253.5
+  Open Pos   28.0  28.0
+  Pos Neg     7.5   7.5
+  Pos Open   23.5  23.5
+  Pos Pos     6.0   6.0
+
+Dimensions (9x2): 18
+Bonferroni adjustment to alpha: 0.00277777777777778
+Two-tailed critical value: 2.99131611518378
+
+This is the test result:
+
+	Pearson's Chi-squared test
+
+data:  x
+X-squared = 168.23, df = 8, p-value < 2.2e-16
+
+This is input data
+           Resource
+ngrams       D1  D2
+  Neg Neg     8   0
+  Neg Open   26   8
+  Neg Pos     6   2
+  Open Neg   27   9
+  Open Open 201 340
+  Open Pos   37   1
+  Pos Neg     5   1
+  Pos Open   37   2
+  Pos Pos    17   1
+
+This is rho
+X-squared 
+    146.6 
+
+This is pvalue
+[1] 9.804e-28
+
+This is standard residual
+           Resource
+ngrams           D1      D2
+  Neg Neg     2.844  -2.844
+  Neg Open    3.162  -3.162
+  Neg Pos     1.422  -1.422
+  Open Neg    3.077  -3.077
+  Open Open -11.790  11.790
+  Open Pos    5.999  -5.999
+  Pos Neg     1.640  -1.640
+  Pos Open    5.761  -5.761
+  Pos Pos     3.819  -3.819
+
+This is observation
+           Resource
+ngrams       D1  D2
+  Neg Neg     8   0
+  Neg Open   26   8
+  Neg Pos     6   2
+  Open Neg   27   9
+  Open Open 201 340
+  Open Pos   37   1
+  Pos Neg     5   1
+  Pos Open   37   2
+  Pos Pos    17   1
+
+This is expected
+           Resource
+ngrams         D1    D2
+  Neg Neg     4.0   4.0
+  Neg Open   17.0  17.0
+  Neg Pos     4.0   4.0
+  Open Neg   18.0  18.0
+  Open Open 270.5 270.5
+  Open Pos   19.0  19.0
+  Pos Neg     3.0   3.0
+  Pos Open   19.5  19.5
+  Pos Pos     9.0   9.0
+
+Dimensions (9x2): 18
+Bonferroni adjustment to alpha: 0.00277777777777778
+Two-tailed critical value: 2.99131611518378
+
+This is the test result:
+
+	Pearson's Chi-squared test
+
+data:  x
+X-squared = 146.65, df = 8, p-value < 2.2e-16
+
+
+ trigram of all session aggregated
