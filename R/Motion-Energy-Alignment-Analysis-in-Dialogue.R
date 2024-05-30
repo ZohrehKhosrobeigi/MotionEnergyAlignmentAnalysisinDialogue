@@ -353,7 +353,7 @@ for(session in sessions) {
   
   
   
-  #Reversed
+  #Shuffled
   
   session_d2 <- subset(Dr, Session == session)
   time_series_d2 <-session_d2$L0SigC
