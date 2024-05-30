@@ -1,7 +1,9 @@
-#setwd("Data2Test/W_03_Output_Actual_rMEA_All_Pval/iOutput_Joint_ME_Coplayers_Norm_rMEA")
-#setwd("Data2Test/W_03_Output_Shuffled_rMEA_All_Pval/iOutput_ME_Shuffled_rMEA")
-#setwd("Data2Test/W_03_Output_Reversed_rMEA_All_Pval/iOutput_ME_Reversed_RightSidePlayerFrames_rMEA")
-setwd("Data2Test/W_03_Output_Actual_SSD_All_Pval/Output_Joint_ME_Coplayers_Norm_SSD")
+
+# Set the working directory to your folder
+#setwd("/Users/zohrehkhosrobeigi/Documents/MyPAPER/Papers/LeadingFolloingWindows_final/R/Data2Test/W_03_Output_Actual_rMEA_All_Pval/iOutput_Joint_ME_Coplayers_Norm_rMEA")
+#setwd("/Users/zohrehkhosrobeigi/Documents/MyPAPER/Papers/LeadingFolloingWindows_final/R/Data2Test/W_03_Output_Shuffled_rMEA_All_Pval/iOutput_ME_Shuffled_rMEA")
+#setwd("/Users/zohrehkhosrobeigi/Documents/MyPAPER/Papers/LeadingFolloingWindows_final/R/Data2Test/W_03_Output_Reversed_rMEA_All_Pval/iOutput_ME_Reversed_RightSidePlayerFrames_rMEA")
+setwd("/Users/zohrehkhosrobeigi/Documents/MyPAPER/Papers/LeadingFolloingWindows_final/R/Data2Test/W_03_Output_Actual_SSD_All_Pval/Output_Joint_ME_Coplayers_Norm_SSD")
 fisher_z_transform <- function(r) {
   return(0.5 * log((1 + r) / (1 - r)))
 }
@@ -59,8 +61,8 @@ print(adjusted_p_values)
 ###############################
 #Comparing OpenCV and rMEA
 # Define the directories
-dir1 <- "/Users/zohrehkhosrobeigi/PycharmProjects/MotionEnergyAlignmentAnalysisinDialogue/R/Data2Test/W_03_Output_Actual_rMEA_All_Pval/iOutput_Joint_ME_Coplayers_Norm_rMEA" 
-dir2 <- "/Users/zohrehkhosrobeigi/PycharmProjects/MotionEnergyAlignmentAnalysisinDialogue/R/Data2Test/W_03_Output_Actual_SSD_All_Pval/Output_Joint_ME_Coplayers_Norm_SSD"
+dir1 <- "/Users/zohrehkhosrobeigi/Documents/MyPAPER/Papers/LeadingFolloingWindows_final/R/Data2Test/W_03_Output_Actual_rMEA_All_Pval/iOutput_Joint_ME_Coplayers_Norm_rMEA" 
+dir2 <- "/Users/zohrehkhosrobeigi/Documents/MyPAPER/Papers/LeadingFolloingWindows_final/R/Data2Test/W_03_Output_Actual_SSD_All_Pval/Output_Joint_ME_Coplayers_Norm_SSD"
 
 
 
@@ -79,7 +81,8 @@ correlation_results <- list()
 # Loop over the files in both directories simultaneously
 for (i in 1:length(files1)) {
   
-
+  print(files1[i])
+  print(files2[i])
   # Read the files
   DOpen <- read.csv(files1[i], header=TRUE, stringsAsFactors=TRUE)
   DRMEA <- read.csv(files2[i], header=TRUE, stringsAsFactors=TRUE)
@@ -91,9 +94,9 @@ for (i in 1:length(files1)) {
   print(corr2)
 }
 
-###       ngram      ngram      ngram      ngram      ngram      ngram      ngram      ngram      ngram      
+###ngram      ngram      ngram      ngram      ngram      ngram      ngram      ngram      ngram      
 
-#Acutal and Reversed Per sessions
+############################.    Acutal and Reversed Per sessions
 
 chisq.apr <- function(x,alpha) { # chi-squared adjusted pearson residuals N(0,1)
   print("********************")
@@ -120,6 +123,58 @@ chisq.apr <- function(x,alpha) { # chi-squared adjusted pearson residuals N(0,1)
   
 }
 
+
+
+require(foreign)
+require(ggplot2)
+require(MASS)
+require(reshape2)
+chisq_plot.apr <- function(x,alpha) { # chi-squared adjusted pearson residuals N(0,1)
+  print("********************")
+  
+  print(chisq.test(x))
+  print("This is observation")
+  print(chisq.test(x)$observed)
+  adjustedresiduals <- chisq.test(x)$stdres
+  print("This is adjusted residuals table")
+  print(signif(adjustedresiduals),4)
+  #        return(chisq.test(x)$y)
+  dim <- nrow(x)*ncol(x)
+  p <- (alpha/dim) # bonferroni correction
+  print(paste0("dimensions ","(",nrow(x),"x",ncol(x),"): ",dim))
+  print(paste0("Bonferroni adjustment to alpha: ",p))    
+  print(paste0("two-tailed critical value: ",qnorm(p/2,lower.tail=FALSE)))
+  print("                                 ")
+  print("this is expection")
+  print(chisq.test(x)$expected)
+  if (chisq.test(x)$p.value<0.05)
+    print(" It IS SIG")
+  
+  df_residuals <- as.data.frame(as.table(adjustedresiduals))
+  
+  ggsave("/Users/zohrehkhosrobeigi/Documents/MyPAPER/Papers/LeadingFolloingWindows_final/R/Data2Test/S.png", plot = last_plot(), width = 5, height =6, units = "in")
+  ggplot(df_residuals, aes(x = "", y = "", fill = Freq)) +
+    geom_tile() +
+    
+    geom_text(aes(label = sprintf("%.2f", Freq)), vjust = 0, size = 5) +#this is the size of numbers
+    facet_grid(ngrams ~ Resource) +
+    #geom_tile(width = 5, height = 2) + # Increase or decrease to adjust visual spacing
+    scale_fill_gradient2(low = "red", high = "blue", mid = "white", midpoint = 0, limit = c(min(df_residuals$Freq), max(df_residuals$Freq))) +
+    labs(title = "", x = "", y = "") +
+    theme(strip.text.y = element_text(size = 9),#this is for pos neg
+          strip.text.x = element_text(size = 12, face = "bold", angle = 0), # Adjust angle here for horizontal facets
+          axis.text = element_text(size = 14, face = "bold"),
+          axis.title = element_text(size = 14, face = "bold"),
+          legend.text = element_text(size = 14, face = "bold"),
+          plot.margin = margin(t = 0, r = 0, b = 0, l = 0, unit = "cm"))
+}
+
+
+
+
+
+
+
 Da <- read.csv("Data2Test/W_03_Output_Actual_rMEA_All_Pval/FinalData_Actual_ME_Demog_rMEA_All_Pval/Aggregated_CC_WindowLength_0.3_Lag_3_Correlation_wins.csv",header=TRUE,stringsAsFactors=TRUE)
 Dr <- read.csv("Data2Test/W_03_Output_Reversed_rMEA_All_Pval/FinalData_Reversed_ME_Demog_rMEA_All_Pval/Aggregated_CC_WindowLength_0.3_Lag_3_Correlation_wins.csv",header=TRUE,stringsAsFactors=TRUE)
 
@@ -134,6 +189,10 @@ Da$L0SigC <- factor(with(Da,ifelse(Pval_Lag_0_second<threshold,ifelse(Coeff_Lag_
 
 Dr$L0SigBin <- with(Dr,ifelse(Pval_Lag_0_second<threshold,1,0))
 Dr$L0SigC <- factor(with(Dr,ifelse(Pval_Lag_0_second<threshold,ifelse(Coeff_Lag_0_second<0,"Neg","Pos"),"Open")))
+
+
+
+
 
 
 #per session #Acutal and Reversed Per sessions
@@ -187,7 +246,29 @@ for(session in sessions) {
 }
 
 
-# Over sessions for Actual vs. Reversed
+############ All Sessions Reversed
+#Acutal and Reversed for all sessions, to have one contingency table
+
+
+Da <- read.csv("Data2Test/W_03_Output_Actual_rMEA_All_Pval/FinalData_Actual_ME_Demog_rMEA_All_Pval/Aggregated_CC_WindowLength_0.3_Lag_3_Correlation_wins.csv",header=TRUE,stringsAsFactors=TRUE)
+Dr <- read.csv("Data2Test/W_03_Output_Reversed_rMEA_All_Pval/FinalData_Reversed_ME_Demog_rMEA_All_Pval/Aggregated_CC_WindowLength_0.3_Lag_3_Correlation_wins.csv",header=TRUE,stringsAsFactors=TRUE)
+
+
+
+bon<-0.05/32547
+threshold<-0.05
+
+
+Da$L0SigBin <- with(Da,ifelse(Pval_Lag_0_second<threshold,1,0))
+Da$L0SigC <- factor(with(Da,ifelse(Pval_Lag_0_second<threshold,ifelse(Coeff_Lag_0_second<0,"Neg","Pos"),"Open")))
+
+
+Dr$L0SigBin <- with(Dr,ifelse(Pval_Lag_0_second<threshold,1,0))
+Dr$L0SigC <- factor(with(Dr,ifelse(Pval_Lag_0_second<threshold,ifelse(Coeff_Lag_0_second<0,"Neg","Pos"),"Open")))
+
+
+#per session
+sessions <- unique(Da$Session)
 
 # Initialize Dallgrams outside the loop to collect data across all sessions
 Dallgrams <- data.frame(ngrams = character(), Resource = factor())
@@ -214,7 +295,7 @@ for(session in unique(Da$Session)) {
   }
   
   three_grams_vector_d2 <- unlist(three_grams_d2)
-  Dr3grams_d2 <- data.frame(ngrams = three_grams_vector_d2, Resource = factor(rep("Shuffled", length(three_grams_vector_d2))))
+  Dr3grams_d2 <- data.frame(ngrams = three_grams_vector_d2, Resource = factor(rep("Reversed", length(three_grams_vector_d2))))
   
   # Append to Dallgrams
   Dallgrams <- rbind(Dallgrams, Da3grams_d1, Dr3grams_d2)
@@ -230,23 +311,20 @@ DallgramsSum$ngrams <- as.factor(DallgramsSum$ngrams)
 
 # Now use xtabs for cross-tabulation without specifying a numeric count
 contingencyTable <- xtabs(Count ~ ngrams + Resource, data = DallgramsSum)
-chisq.apr(contingencyTable,0.05)
-####################################### End of Reversed
+chisq_plot.apr(contingencyTable,0.05)
+######End of Reversed
+### ######################## Actual vs. Shuffled. 
 
-
-####################################### Actual vs. Shuffled
+########################Actual vs. Shuffled per Session
 
 Da <- read.csv("Data2Test/W_03_Output_Actual_rMEA_All_Pval/FinalData_Actual_ME_Demog_rMEA_All_Pval/Aggregated_CC_WindowLength_0.3_Lag_3_Correlation_wins.csv",header=TRUE,stringsAsFactors=TRUE)
 Dr <- read.csv("Data2Test/W_03_Output_Shuffled_rMEA_All_Pval/FinalData_Shuffled_ME_Demog_rMEA_All_Pval/Aggregated_CC_WindowLength_0.3_Lag_3_Correlation_wins.csv",header=TRUE,stringsAsFactors=TRUE)
 
-
 bon<-0.05/32547
 threshold<-0.05
 
-
 Da$L0SigBin <- with(Da,ifelse(Pval_Lag_0_second<threshold,1,0))
 Da$L0SigC <- factor(with(Da,ifelse(Pval_Lag_0_second<threshold,ifelse(Coeff_Lag_0_second<0,"Neg","Pos"),"Open")))
-
 
 Dr$L0SigBin <- with(Dr,ifelse(Pval_Lag_0_second<threshold,1,0))
 Dr$L0SigC <- factor(with(Dr,ifelse(Pval_Lag_0_second<threshold,ifelse(Coeff_Lag_0_second<0,"Neg","Pos"),"Open")))
@@ -275,7 +353,7 @@ for(session in sessions) {
   
   
   
-  #Shuffled
+  #Reversed
   
   session_d2 <- subset(Dr, Session == session)
   time_series_d2 <-session_d2$L0SigC
@@ -303,7 +381,29 @@ for(session in sessions) {
 }
 
 
-# Over sessions for Actual vs. Shuffled
+############ All Sessions
+#Acutal and Shuffled for all sessions, to have one contingency table
+
+
+Da <- read.csv("Data2Test/W_03_Output_Actual_rMEA_All_Pval/FinalData_Actual_ME_Demog_rMEA_All_Pval/Aggregated_CC_WindowLength_0.3_Lag_3_Correlation_wins.csv",header=TRUE,stringsAsFactors=TRUE)
+Dr <- read.csv("Data2Test/W_03_Output_Shuffled_rMEA_All_Pval/FinalData_Shuffled_ME_Demog_rMEA_All_Pval/Aggregated_CC_WindowLength_0.3_Lag_3_Correlation_wins.csv",header=TRUE,stringsAsFactors=TRUE)
+
+
+
+bon<-0.05/32547
+threshold<-0.05
+
+
+Da$L0SigBin <- with(Da,ifelse(Pval_Lag_0_second<threshold,1,0))
+Da$L0SigC <- factor(with(Da,ifelse(Pval_Lag_0_second<threshold,ifelse(Coeff_Lag_0_second<0,"Neg","Pos"),"Open")))
+
+
+Dr$L0SigBin <- with(Dr,ifelse(Pval_Lag_0_second<threshold,1,0))
+Dr$L0SigC <- factor(with(Dr,ifelse(Pval_Lag_0_second<threshold,ifelse(Coeff_Lag_0_second<0,"Neg","Pos"),"Open")))
+
+
+#per session
+sessions <- unique(Da$Session)
 
 # Initialize Dallgrams outside the loop to collect data across all sessions
 Dallgrams <- data.frame(ngrams = character(), Resource = factor())
@@ -346,7 +446,7 @@ DallgramsSum$ngrams <- as.factor(DallgramsSum$ngrams)
 
 # Now use xtabs for cross-tabulation without specifying a numeric count
 contingencyTable <- xtabs(Count ~ ngrams + Resource, data = DallgramsSum)
-chisq.apr(contingencyTable,0.05)
-########### End of Shuffled
+chisq_plot.apr(contingencyTable,0.05)
+######End of Shuffled
 
 

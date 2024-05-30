@@ -1,5 +1,4 @@
 #THIS CODE DOES ROLLING WINDOW WITH LAG AND PLOAT SEARMAN AND PVLAUE PER SESSION
-#THIS CODE  TRY several LENGHT OF WINDOWs and DIFFERENT LAGS USING TWO DIFFERENT ALOGRITHMS.
 #Leading and following for both players are computed.
 import PandaCSVReader
 import RollingWindow

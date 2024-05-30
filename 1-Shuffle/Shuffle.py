@@ -8,7 +8,7 @@ class Shuffle():
 
         df[header]=0 #chage all values of the columns to zero to have no effect on sum and avg
 
-        # Shuffle columns from motion dataframes, 10000 times shuffling
+        # Shuffle columns from motion dataframes, 10 times shuffling
         for i in range (1,11):
             random.seed (time.time ())
 
