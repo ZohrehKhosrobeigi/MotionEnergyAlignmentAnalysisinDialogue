@@ -4,9 +4,9 @@ import Importing_all_files_in_list_1
 import PandaCSVReader
 import PairingFiles
 input_file="Data2Test/W_03_Output_Actual_rMEA_All_Pval/iOutput_Joint_ME_Coplayers_Norm_rMEA"
-# input_file="Data2Test/W_03_Output_Reversed_rMEA_All_Pval/iOutput_ME_Reversed_RightSidePlayerFrames_rMEA"
-# input_file="Data2Test/W_03_Output_Shuffled_rMEA_All_Pval/iOutput_ME_Shuffled_rMEA"
-# input_file="Data2Test/W_03_Output_Actual_SSD_All_Pval/Output_Joint_ME_Coplayers_Norm_SSD"
+# input_file_actual="Data2Test/W_03_Output_Reversed_rMEA_All_Pval/iOutput_ME_Reversed_RightSidePlayerFrames_rMEA"
+# input_file_actual="Data2Test/W_03_Output_Shuffled_rMEA_All_Pval/iOutput_ME_Shuffled_rMEA"
+# input_file_actual="Data2Test/W_03_Output_Actual_SSD_All_Pval/Output_Joint_ME_Coplayers_Norm_SSD"
 
 wf = open ("Error___Actual.txt", "a")
 # Reading files from folder
@@ -60,3 +60,4 @@ for k,v in paired_files.dict_pairedfiles.items():
     print ("this is file name:  ", v[0], v[1])
     print ("This is rho:  ", spear_process.spear_coef, "This is p-value:  ", spear_process.pvalue_coef)
 
+############################
