@@ -3,7 +3,7 @@
 #setwd("/Users/zohrehkhosrobeigi/Documents/MyPAPER/Papers/LeadingFolloingWindows_final/R/Data2Test/W_03_Output_Actual_rMEA_All_Pval/iOutput_Joint_ME_Coplayers_Norm_rMEA")
 #setwd("/Users/zohrehkhosrobeigi/Documents/MyPAPER/Papers/LeadingFolloingWindows_final/R/Data2Test/W_03_Output_Shuffled_rMEA_All_Pval/iOutput_ME_Shuffled_rMEA")
 #setwd("/Users/zohrehkhosrobeigi/Documents/MyPAPER/Papers/LeadingFolloingWindows_final/R/Data2Test/W_03_Output_Reversed_rMEA_All_Pval/iOutput_ME_Reversed_RightSidePlayerFrames_rMEA")
-#setwd("/Users/zohrehkhosrobeigi/Documents/MyPAPER/Papers/LeadingFolloingWindows_final/R/Data2Test/W_03_Output_Actual_SSD_All_Pval/Output_Joint_ME_Coplayers_Norm_SSD")
+setwd("/Users/zohrehkhosrobeigi/Documents/MyPAPER/Papers/LeadingFolloingWindows_final/R/Data2Test/W_03_Output_Actual_SSD_All_Pval/Output_Joint_ME_Coplayers_Norm_SSD")
 fisher_z_transform <- function(r) {
   return(0.5 * log((1 + r) / (1 - r)))
 }
