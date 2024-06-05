@@ -3,7 +3,7 @@
 #setwd("/Users/zohrehkhosrobeigi/Documents/MyPAPER/Papers/LeadingFolloingWindows_final/R/Data2Test/W_03_Output_Actual_rMEA_All_Pval/iOutput_Joint_ME_Coplayers_Norm_rMEA")
 #setwd("/Users/zohrehkhosrobeigi/Documents/MyPAPER/Papers/LeadingFolloingWindows_final/R/Data2Test/W_03_Output_Shuffled_rMEA_All_Pval/iOutput_ME_Shuffled_rMEA")
 #setwd("/Users/zohrehkhosrobeigi/Documents/MyPAPER/Papers/LeadingFolloingWindows_final/R/Data2Test/W_03_Output_Reversed_rMEA_All_Pval/iOutput_ME_Reversed_RightSidePlayerFrames_rMEA")
-setwd("/Users/zohrehkhosrobeigi/Documents/MyPAPER/Papers/LeadingFolloingWindows_final/R/Data2Test/W_03_Output_Actual_SSD_All_Pval/Output_Joint_ME_Coplayers_Norm_SSD")
+#setwd("/Users/zohrehkhosrobeigi/Documents/MyPAPER/Papers/LeadingFolloingWindows_final/R/Data2Test/W_03_Output_Actual_SSD_All_Pval/Output_Joint_ME_Coplayers_Norm_SSD")
 fisher_z_transform <- function(r) {
   return(0.5 * log((1 + r) / (1 - r)))
 }
@@ -100,29 +100,43 @@ for (i in 1:length(files1)) {
 
 chisq.apr <- function(x,alpha) { # chi-squared adjusted pearson residuals N(0,1)
   print("********************")
-  #print(x)
+  chi <- chisq.test(x)
   
-  print(chisq.test(x))
-  #print("This is observation")
-  #print(chisq.test(x)$observed)
+  print("\nChi-squared Test Output:\n")
+  print(chi)
+  
+  
+  if (chisq.test(x)$p.value<0.05)
+    print(" It IS SIG")
+  
+  if (chisq.test(x)$p.value>=0.05)
+    print(" It IS Not SIG")
+  
+  
+
+  cat("\nObserved or input data:\n")
+  print(chi$observed)
+  cat("\nExpected:\n")
+  print(chi$expected)
+  
+  
+  
+  
+  
   adjustedresiduals <- chisq.test(x)$stdres
-  print("This is Residuals")
-  print(signif(adjustedresiduals),4)
-  #        return(chisq.test(x)$y)
+  cat("\nadjustedresiduals:\n")
+  print(signif(adjustedresiduals),4)  
   dim <- nrow(x)*ncol(x)
   p <- (alpha/dim) # bonferroni correction
   print(paste0("dimensions ","(",nrow(x),"x",ncol(x),"): ",dim))
   print(paste0("Bonferroni adjustment to alpha: ",p))    
   print(paste0("two-tailed critical value: ",qnorm(p/2,lower.tail=FALSE)))
   print("                                 ")
-  if (chisq.test(x)$p.value<0.05)
-    print(" It IS SIG")
-  print("this is expection")
-  print(chisq.test(x)$expected)
+  
+
   
   
 }
-
 
 
 require(foreign)
@@ -132,23 +146,39 @@ require(reshape2)
 chisq_plot.apr <- function(x,alpha) { # chi-squared adjusted pearson residuals N(0,1)
   print("********************")
   
-  print(chisq.test(x))
-  print("This is observation")
-  print(chisq.test(x)$observed)
+  chi <- chisq.test(x)
+  
+  print("\nChi-squared Test Output:\n")
+  print(chi)
+  
+  
+  if (chisq.test(x)$p.value<0.05)
+    print(" It IS SIG")
+  
+  if (chisq.test(x)$p.value>=0.05)
+    print(" It IS Not SIG")
+  
+  
+  
+  cat("\nObserved or input data:\n")
+  print(chi$observed)
+  cat("\nExpected:\n")
+  print(chi$expected)
+  
+  
+  
+  
+  
   adjustedresiduals <- chisq.test(x)$stdres
-  print("This is adjusted residuals table")
-  print(signif(adjustedresiduals),4)
-  #        return(chisq.test(x)$y)
+  cat("\nadjustedresiduals:\n")
+  print(signif(adjustedresiduals),4)  
   dim <- nrow(x)*ncol(x)
   p <- (alpha/dim) # bonferroni correction
   print(paste0("dimensions ","(",nrow(x),"x",ncol(x),"): ",dim))
   print(paste0("Bonferroni adjustment to alpha: ",p))    
   print(paste0("two-tailed critical value: ",qnorm(p/2,lower.tail=FALSE)))
   print("                                 ")
-  print("this is expection")
-  print(chisq.test(x)$expected)
-  if (chisq.test(x)$p.value<0.05)
-    print(" It IS SIG")
+ 
   
   df_residuals <- as.data.frame(as.table(adjustedresiduals))
   
@@ -175,8 +205,8 @@ chisq_plot.apr <- function(x,alpha) { # chi-squared adjusted pearson residuals N
 
 
 
-Da <- read.csv("Data2Test/W_03_Output_Actual_rMEA_All_Pval/FinalData_Actual_ME_Demog_rMEA_All_Pval/Aggregated_CC_WindowLength_0.3_Lag_3_Correlation_wins.csv",header=TRUE,stringsAsFactors=TRUE)
-Dr <- read.csv("Data2Test/W_03_Output_Reversed_rMEA_All_Pval/FinalData_Reversed_ME_Demog_rMEA_All_Pval/Aggregated_CC_WindowLength_0.3_Lag_3_Correlation_wins.csv",header=TRUE,stringsAsFactors=TRUE)
+Da <- read.csv("Data2Test/W_03_Output_Actual_rMEA/Aggregated_CC_WindowLength_0.3_Lag_1/Aggregated_CC_WindowLength_0.3_Lag_1_Correlation_wins.csv",header=TRUE,stringsAsFactors=TRUE)
+Dr <- read.csv("Data2Test/W_03_Output_Reversed_rMEA/Aggregated_CC_WindowLength_0.3_Lag_1/Aggregated_CC_WindowLength_0.3_Lag_1_Correlation_wins.csv",header=TRUE,stringsAsFactors=TRUE)
 
 
 bon<-0.05/32547
@@ -246,12 +276,12 @@ for(session in sessions) {
 }
 
 
-############ All Sessions Reversed
+############ All Sessions 
 #Acutal and Reversed for all sessions, to have one contingency table
 
 
-Da <- read.csv("Data2Test/W_03_Output_Actual_rMEA_All_Pval/FinalData_Actual_ME_Demog_rMEA_All_Pval/Aggregated_CC_WindowLength_0.3_Lag_3_Correlation_wins.csv",header=TRUE,stringsAsFactors=TRUE)
-Dr <- read.csv("Data2Test/W_03_Output_Reversed_rMEA_All_Pval/FinalData_Reversed_ME_Demog_rMEA_All_Pval/Aggregated_CC_WindowLength_0.3_Lag_3_Correlation_wins.csv",header=TRUE,stringsAsFactors=TRUE)
+Da <- read.csv("Data2Test/W_03_Output_Actual_rMEA/Aggregated_CC_WindowLength_0.3_Lag_1/Aggregated_CC_WindowLength_0.3_Lag_1_Correlation_wins.csv",header=TRUE,stringsAsFactors=TRUE)
+Dr <- read.csv("Data2Test/W_03_Output_Reversed_rMEA/Aggregated_CC_WindowLength_0.3_Lag_1/Aggregated_CC_WindowLength_0.3_Lag_1_Correlation_wins.csv",header=TRUE,stringsAsFactors=TRUE)
 
 
 
@@ -267,7 +297,7 @@ Dr$L0SigBin <- with(Dr,ifelse(Pval_Lag_0_second<threshold,1,0))
 Dr$L0SigC <- factor(with(Dr,ifelse(Pval_Lag_0_second<threshold,ifelse(Coeff_Lag_0_second<0,"Neg","Pos"),"Open")))
 
 
-#per session
+
 sessions <- unique(Da$Session)
 
 # Initialize Dallgrams outside the loop to collect data across all sessions
@@ -317,8 +347,8 @@ chisq_plot.apr(contingencyTable,0.05)
 
 ########################Actual vs. Shuffled per Session
 
-Da <- read.csv("Data2Test/W_03_Output_Actual_rMEA_All_Pval/FinalData_Actual_ME_Demog_rMEA_All_Pval/Aggregated_CC_WindowLength_0.3_Lag_3_Correlation_wins.csv",header=TRUE,stringsAsFactors=TRUE)
-Dr <- read.csv("Data2Test/W_03_Output_Shuffled_rMEA_All_Pval/FinalData_Shuffled_ME_Demog_rMEA_All_Pval/Aggregated_CC_WindowLength_0.3_Lag_3_Correlation_wins.csv",header=TRUE,stringsAsFactors=TRUE)
+Da <- read.csv("Data2Test/W_03_Output_Actual_rMEA/Aggregated_CC_WindowLength_0.3_Lag_1/Aggregated_CC_WindowLength_0.3_Lag_1_Correlation_wins.csv",header=TRUE,stringsAsFactors=TRUE)
+Dr <- read.csv("Data2Test/W_03_Output_Actual_Shuffled/Aggregated_CC_WindowLength_0.3_Lag_1/Aggregated_CC_WindowLength_0.3_Lag_1_Correlation_wins.csv",header=TRUE,stringsAsFactors=TRUE)
 
 bon<-0.05/32547
 threshold<-0.05
@@ -385,9 +415,8 @@ for(session in sessions) {
 #Acutal and Shuffled for all sessions, to have one contingency table
 
 
-Da <- read.csv("Data2Test/W_03_Output_Actual_rMEA_All_Pval/FinalData_Actual_ME_Demog_rMEA_All_Pval/Aggregated_CC_WindowLength_0.3_Lag_3_Correlation_wins.csv",header=TRUE,stringsAsFactors=TRUE)
-Dr <- read.csv("Data2Test/W_03_Output_Shuffled_rMEA_All_Pval/FinalData_Shuffled_ME_Demog_rMEA_All_Pval/Aggregated_CC_WindowLength_0.3_Lag_3_Correlation_wins.csv",header=TRUE,stringsAsFactors=TRUE)
-
+Da <- read.csv("Data2Test/W_03_Output_Actual_rMEA/Aggregated_CC_WindowLength_0.3_Lag_1/Aggregated_CC_WindowLength_0.3_Lag_1_Correlation_wins.csv",header=TRUE,stringsAsFactors=TRUE)
+Dr <- read.csv("Data2Test/W_03_Output_Actual_Shuffled/Aggregated_CC_WindowLength_0.3_Lag_1/Aggregated_CC_WindowLength_0.3_Lag_1_Correlation_wins.csv",header=TRUE,stringsAsFactors=TRUE)
 
 
 bon<-0.05/32547
